@@ -29,7 +29,7 @@ def create():
 
     response = jsonify("ok")
     response.status_code = 201
-    # response.headers['Location'] = f"/games/{id}"
+    response.headers['Location'] = f"/{id}"
     response.headers['Access-Control-Expose-Headers'] = '*'
     response.autocorrect_location_header = False
     return response
