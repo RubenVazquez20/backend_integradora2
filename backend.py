@@ -3,25 +3,22 @@ from flask_cors import CORS
 from flask.json import jsonify
 import uuid
 import os
+import logging
 #Importación el Modelo
 from traffic import Street
 
 # games = {}
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_url_path='')
 CORS(app)
 
 port = int(os.getenv('PORT', 8000))
+log = logging.getLogger('werkzeug')
+log.disabled = True
 
 @app.rout('/')
 def root():
-    return jsonify (
-        [
-            {
-                "message" : "funcionando :)"
-            }
-        ]
-    )
+    return 'Hello, mundoo'
 
 @app.route("/", methods=["POST"])
 def create():
