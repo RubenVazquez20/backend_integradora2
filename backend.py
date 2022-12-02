@@ -10,14 +10,15 @@ from traffic import Street
 # games = {}
 
 app = flask.Flask(__name__, static_url_path='')
+log = logging.getLogger('werkzeug')
+log.disabled = True
 CORS(app)
 
 port = int(os.getenv('PORT', 8000))
-log = logging.getLogger('werkzeug')
-log.disabled = True
 
-@app.rout('/')
-def root():
+
+@app.route('/', methods=["GET"])
+def hola():
     return 'Hello, mundoo'
 
 @app.route("/", methods=["POST"])

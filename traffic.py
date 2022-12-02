@@ -274,27 +274,3 @@ class Street(Model):
             if isinstance(n, Volantazo):
                 volantazos.append({"id": n.unique_id, "pos": [n.pos[0], n.pos[1]], "turn": n.turn}) 
         return volantazos
-
-
-# def draw(agent):
-#     color = "Blue" if agent.unique_id == 1 else "Brown"
-#     if isinstance(agent, Volantazo):
-#         return {"Shape": "circle", "r": 3, "Filled": "true", "Color": "Gray"}
-#     if isinstance(agent, Tlight) and not agent.status:
-#         return {"Shape": "circle", "r": 3, "Filled": "true", "Color": "Red"}
-#     if isinstance(agent, Tlight) and agent.status:
-#         return {"Shape": "circle", "r": 3, "Filled": "true", "Color": "Green"}
-#     if isinstance(agent, Car) and agent.horizontal:
-#         return {"Shape": "rect", "w": 0.04, "h": 0.03, "Filled": "true", "Color": color}
-#     if isinstance(agent, Car) and not agent.horizontal:
-#         return {"Shape": "rect", "w": 0.03, "h": 0.04, "Filled": "true", "Color": color}
-
-
-
-# canvas = SimpleCanvas(draw, 500, 500)
-
-# model_params = {}
-
-# server = ModularServer(Street, [canvas], "Traffic", model_params)
-# server.port = 8254
-# server.launch()
