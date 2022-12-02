@@ -17,9 +17,9 @@ CORS(app)
 port = int(os.getenv('PORT', 8000))
 
 
-@app.route('/', methods=["GET"])
-def hola():
-    return 'Hello, mundoo'
+# @app.route('/', methods=["GET"])
+# def hola():
+#     return 'Hello, mundoo'
 
 @app.route("/", methods=["POST"])
 def create():
