@@ -1,6 +1,6 @@
 ---
 applications:
- - name: backend_integradora1
+ - name: backend_integradora2
    random-route: true
    buildpacks:
    - python_buildpack
