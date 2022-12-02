@@ -21,7 +21,7 @@ port = int(os.getenv('PORT', 8000))
 def hola():
     return 'Hello, mundoo'
 
-@app.route("/", methods=["POST"])
+@app.route("/step", methods=["POST"])
 def create():
     global model
     # id = str(uuid.uuid4())
@@ -40,7 +40,8 @@ def queryState():
     carros = model.getCarros()
     semaforos = model.getSemaforos()
     volantazos = model.getVolantazos()
-    return jsonify({"carros": carros, "semaforos": semaforos, "volantazos": volantazos})
+    siu = jsonify({"carros": carros, "semaforos": semaforos, "volantazos": volantazos})
+    return siu
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port= port, debug=True)
