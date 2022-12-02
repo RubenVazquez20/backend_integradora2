@@ -11,7 +11,7 @@ from traffic import Street
 app = flask.Flask(__name__)
 CORS(app)
 
-port = int(os.getenv('PORT, 8000'))
+port = int(os.getenv('PORT', 8000))
 
 @app.rout('/')
 def root():
